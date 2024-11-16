@@ -1,4 +1,4 @@
-describe('Validação de entradas dos campos em Cadastro de pessoas BSN', () => {
+describe('Validação de entradas e mensagens de erro dos campos', () => {
 
   beforeEach(() => {
     cy.visit('https://www.bsntecnologia.com.br/TesteQA.html')
@@ -7,27 +7,27 @@ describe('Validação de entradas dos campos em Cadastro de pessoas BSN', () => 
   
   it('Validação de mensagem de erro ao tentar enviar formulário com o campo nome vazio', () => {
     
-        cy.get('#sobrenome').type('sebastiana')
-        cy.get('#cpf').type('173.897.507-07')
-        cy.get('#cep').type('65074-560')
-        cy.get('#numero').type('11')
-        cy.get('#email').type('sandra_sebastiana_cardoso@uel.br')
-        cy.get('#celular').type('(98) 98561-0660')
-        cy.get('.btn').click()
-        cy.get('#nome-error').should('be.visible')
+    cy.get('#sobrenome').type('sebastiana')
+    cy.get('#cpf').type('173.897.507-07')
+    cy.get('#cep').type('65074-560')
+    cy.get('#numero').type('11')
+    cy.get('#email').type('sandra_sebastiana_cardoso@uel.br')
+    cy.get('#celular').type('(98) 98561-0660')
+    cy.get('.btn').click()
+    cy.get('#nome-error').should('be.visible')
 
   });
 
   it('Validação de mensagem de erro ao tentar enviar formulário com o campo sobrenome vazio', () => {
     
-        cy.get('#nome').type('sandra')
-        cy.get('#cpf').type('173.897.507-07')
-        cy.get('#cep').type('65074-560')
-        cy.get('#numero').type('11')
-        cy.get('#email').type('sandra_sebastiana_cardoso@uel.br')
-        cy.get('#celular').type('(98) 98561-0660')
-        cy.get('.btn').click()
-        cy.get('#sobrenome-error').should('be.visible')
+    cy.get('#nome').type('sandra')
+    cy.get('#cpf').type('173.897.507-07')
+    cy.get('#cep').type('65074-560')
+    cy.get('#numero').type('11')
+    cy.get('#email').type('sandra_sebastiana_cardoso@uel.br')
+    cy.get('#celular').type('(98) 98561-0660')
+    cy.get('.btn').click()
+    cy.get('#sobrenome-error').should('be.visible')
 
   });
 
